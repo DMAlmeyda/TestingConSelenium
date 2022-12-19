@@ -3,6 +3,7 @@
 - [Tecnologias](#tecnologias)
 - [TestSuit_1](#testsuit_1)
 - [TestSuit_2](#testsuit_2)
+- [Resultados](#resultados)
   
     
    
@@ -44,6 +45,23 @@ En algunos casos se hizo una prueba especial porque el sistema anterior dicho no
 Codigo Completo
 
 https://github.com/DMAlmeyda/TestingConSelenium/blob/65fa8f69306d8652f45f4d42d6d8959ab9cd06e0/TestSuit_2/TestCase02_test.py#L2-L80
+
+## Resultados
+
+* TestSuit_01 Todas las pruebas se ejecutaron como se esperaba.
+
+Evidencia 
+  
+  
+  ![TestCase01](https://user-images.githubusercontent.com/108648799/208528214-22f19b13-e835-4439-bf5b-e47ddf65e3eb.PNG)
+
+* TestSuit_02 No paso con exito se encontro desperfectos en dos partes
+
+Evidencia
+  
+  
+  ![TestCase02](https://user-images.githubusercontent.com/108648799/208528466-10a5c753-bae3-4d80-a527-87bc4de0f813.PNG)
+
 
 
 
