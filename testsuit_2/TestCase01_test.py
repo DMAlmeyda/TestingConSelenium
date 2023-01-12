@@ -4,8 +4,8 @@ import unittest
 import time
 import requests
 
-class Test_links(unittest.TestCase):
-    #La funcion setUp inicializa todos los objetos para cada caso de prueba
+class TestCase01(unittest.TestCase):
+    #Se verifica que todos los link para compartir un producto funcionen adecuadamente.
 
     def setUp(self):
         self.options = webdriver.ChromeOptions()
@@ -18,50 +18,50 @@ class Test_links(unittest.TestCase):
         self.driver.maximize_window()
         time.sleep(1)
 
-    #Termina el self driver despues de que se finalize cada caso de prueba
+
 
     def tearDown(self):
         self.driver.quit() 
 
     #Facebook
-    def test_01(self):
+    def test_01_Facebook(self):
         response = requests.head("http://www.facebook.com/sharer/sharer.php?p[url]=https://academybugs.com/store/dnk-yellow-shoes/&p[images][o]=https://academybugs.com/wp-content/uploads/2020/10/shoe8-updated.jpg&p[title]=DNK+Yellow+Shoes")
         time.sleep(2)
         self.assertTrue(200, response.status_code)
 
     #Twitter
-    def test_02(self):
+    def test_02_Twitter(self):
         response = requests.head("https://twitter.cointent/tweet?original_referer=#")
         time.sleep(2)
         self.assertTrue(200, response.status_code)
 
     #Email
-    def test_03(self):
+    def test_03_Email(self):
         self.driver.get("https://academybugs.com/store/dnk-yellow-shoes/")
         time.sleep(3)
         url = self.driver.find_element("xpath","/html/body/div[3]/div/div/div[1]/main/article/div/section/div[1]/div[3]/div[2]/div[3]/a").text
         self.assertIn(url,"mailto")
 
     #Pinterest    
-    def test_04(self):
+    def test_04_Pinterest(self):
         response = requests.head("http://pinterest.com/pin/create/button/?media=https%3A%2F%2Facademybugs.com%2Fwp-content%2Fuploads%2F2020%2F10%2Fshoe8-updated.jpg&description=DNK+Yellow+Shoes&url=https%3A%2F%2Facademybugs.com%2Fstore%2Fdnk-yellow-shoes%2F")
         time.sleep(2)
         self.assertTrue(200, response.status_code)
 
     #Goggleplus
-    def test_05(self):
+    def test_05_Goggleplus(self):
         response = requests.head("https://plus.google.com/share?url=https://academybugs.com/store/dnk-yellow-shoes/")
         time.sleep(2)
         self.assertTrue(200, response.status_code)
         
     #Linkedin
-    def test_06(self):
+    def test_06_Linkedin(self):
         response = requests.head("http://www.linkedin.com/shareArticle?mini=true&url=https://academybugs.com/store/dnk-yellow-shoes/")
         time.sleep(2)
         self.assertTrue(200, response.status_code)
 
     #MySpace
-    def test_07(self):
+    def test_07_MySpace(self):
         self.driver.get("https://academybugs.com/store/dnk-yellow-shoes/")
         self.driver.find_element("xpath",'//*[@id="post-1675"]/div/section/div[1]/div[3]/div[2]/div[7]/a/img').click()
         time.sleep(3)
@@ -71,7 +71,7 @@ class Test_links(unittest.TestCase):
         self.assertTrue("MySpace", self.driver.title)
         
     #Digg
-    def test_08(self):
+    def test_08_Digg(self):
         response = requests.head("http://digg.com/submit?phase=2&url=https://academybugs.com/store/dnk-yellow-shoes/")
         time.sleep(2)
         self.assertTrue(200, response.status_code)   
