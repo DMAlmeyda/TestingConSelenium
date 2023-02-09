@@ -1,7 +1,6 @@
 # Testing con selenium utilizando el patron POM(Page Object Model)
 # TABLA DE CONTENIDOS
 - [Tecnologias](#tecnologias)
-- [Dependencias](#dependencias)
 - [Estrategias](#estrategias)
 - [POM](#pom)
 - [TestSuit01](#testSuit01)
